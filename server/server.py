@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
+from os import getenv
 
 server = Flask(__name__)
 CORS(server)
@@ -25,4 +26,4 @@ def handle_request():
         return jsonify({"error": "Missing 'prompt' key in request body"}), 400
     
 if __name__ == '__main__':
-    server.run()
+    server.run(host='0.0.0.0', port=int(getenv('PORT', 5000)))
