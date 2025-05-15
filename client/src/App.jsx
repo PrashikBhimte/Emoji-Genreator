@@ -14,7 +14,7 @@ function App() {
   };
 
   const handelClick = async () => {
-    const response = await axios.post("http://localhost:5000/", {
+    const response = await axios.post("https://emoji-genreator-production.up.railway.app/", {
       prompt: prompt,
     });
 
